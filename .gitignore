@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/*
+
+!.vscode/settings.json
+
+# Data
+*.parquet
+
+# OS
+.DS_Store
+Thumbs.db
+Data
