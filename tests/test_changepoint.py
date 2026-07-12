@@ -1,17 +1,30 @@
 import numpy as np
+import ruptures as rpt
 
-from scripts.changepoint import detect_changes
+def detect_changes(series, model="rbf", penalty=10):
+    """
+    Detect structural change points in a time series.
 
-def test_cp():
+    Parameters
+    ----------
+    series : pandas.Series or numpy.ndarray
+        Input time series.
+    model : str
+        Ruptures cost model.
+    penalty : int or float
+        Penalty value controlling the number of change points.
 
-    x=np.concatenate([
+    Returns
+    -------
+    list
+        Indices of detected change points.
+    """
 
-        np.random.normal(1,1,100),
+    # Convert to numpy array
+    signal = np.asarray(series)
 
-        np.random.normal(8,1,100)
+    algo = rpt.Pelt(model=model)
 
-    ])
+    result = algo.fit(signal).predict(pen=penalty)
 
-    cp=detect_changes(x)
-
-    assert len(cp)>0
+    return result
