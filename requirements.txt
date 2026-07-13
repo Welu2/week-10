@@ -1,6 +1,6 @@
 pandas
 numpy
-matplotlib
+matplotlib<3.10
 seaborn
 statsmodels
 scipy
@@ -8,3 +8,6 @@ scikit-learn
 pytest
 jupyter
 ruptures
+ArviZ
+PyMC
+arviz-plots
