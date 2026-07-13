@@ -10,3 +10,4 @@ jupyter
 ruptures
 ArviZ
 PyMC
+arviz-plots
